@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+    <a href="{% url 'add_product' %}">Añadir Producto</a>
+    <ul>
+        {% for product in product %}
+            <li>
+                {{product.name}} - Precio: {{product.current_price}}
+                <a href="{% url 'add_price_alert' product.id %}">Añadir Alerta</a>
+            </li>
+        {% endfor %}    
+    </ul>
+    
+</body>
+</html>
